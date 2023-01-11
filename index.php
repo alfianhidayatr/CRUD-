@@ -202,7 +202,7 @@ if (isset($_POST['simpan'])) { // untuk create
                                 <td scope="row "><?php echo $harga ?></td>
                                 <td scope="row "><?php echo $jumlah ?></td>
                                 <td scope="row">
-                                    <a href="index.php?op=edit$id=<?php echo  $id ?>">  <button type="button" class="btn btn-danger">Edit</button></a>
+                                    <a href="index.php?op=edit&id=<?php echo  $id ?>">  <button type="button" class="btn btn-danger">Edit</button></a>
                                     <a href="index.php?op=delete&id=<?php echo $id ?>"> <button type="button" class="btn btn-warning">Delete</button></a>
                                    
                                 </td>

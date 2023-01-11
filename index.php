@@ -24,21 +24,20 @@ if (isset($_GET['op'])) {
     $op = "";
 }
 
-
 if($op == 'delete'){
-    $id =  $_GET ['id'];
+    $id =  $_GET['id'];
     $sql1= "delete from produk where id = '$id'";
     $q1= mysqli_query($koneksi,$sql1);
     if($q1){
-        $sukses = "berhasil di hapus";
+        $sukses = "Berhasil hapus data";
     }else{
-        $error = "gagal delete data";
+        $error = "Di hapus";
     }
 }
 
 
 if ($op == 'edit') {
-    $id         = $_GET['id'];
+    $id          = $_GET['id'];
     $sql1       = "select * from produk where id = '$id'";
     $q1         = mysqli_query($koneksi, $sql1);
     $r1         = mysqli_fetch_array($q1);
@@ -134,33 +133,30 @@ if (isset($_POST['simpan'])) { // untuk create
 
                 }
                 ?>
-                <form action="" method="POST ">
+                <form action="" method="post">
                     <div class="mb-3 row">
                         <label for="nama_produk" class="col-sm-2 col-form-label">Produk</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama_produk" name="nama_produk" value="<?php echo $nama_produk; ?>"></div>
-
+                            <input type="text" class="form-control" id="nama_produk" name="nama_produk" value="<?php echo $nama_produk ?>">
+                        </div>
                         <div class="mb-3 row">
                             <label for="keterangan" class="col-sm-2 col-form-label">Keterangan</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="keterangan" name="keterangan" value="<?php echo $keterangan ?>">
                             </div>
                         </div>
-
                         <div class="mb-3 row">
                             <label for="harga" class="col-sm-2 col-form-label">Harga</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="harga" name="harga" value="<?php echo $harga ?>">
                             </div>
                         </div>
-
                         <div class="mb-3 row">
                             <label for="jumlah" class="col-sm-2 col-form-label">Jumlah</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="jumlah" name="jumlah" value="<?php echo $jumlah ?>">
                             </div>
                         </div>
-
 
                         <div class="col-12">
                             <input type="submit" name="simpan" value="simpan data" class="btn btn-primary">
@@ -194,9 +190,11 @@ if (isset($_POST['simpan'])) { // untuk create
                             $nama_produk =  $r2['nama_produk'];
                             $harga =  $r2['harga'];
                             $jumlah =  $r2['jumlah'];
-                             ?>
+                        ?>
                             <tr>
-                                <th scope="row"><?php echo $urut++ ?></th>
+                                <th scope="row">
+                                    <?php echo $urut++ ?>
+                                </th>
                                 <td scope="row "><?php echo $nama_produk ?></td>
                                 <td scope="row "><?php echo $keterangan ?></td>
                                 <td scope="row "><?php echo $harga ?></td>
